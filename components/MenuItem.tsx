@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import {
   Image,
@@ -8,6 +9,7 @@ import {
   View,
   ViewStyle,
 } from "react-native";
+import { Nav } from "../Router";
 
 type MenuItemType = {
   id: string;
@@ -25,8 +27,12 @@ const MenuItem = ({
   description,
   style,
 }: MenuItemType) => {
+  const navigation = useNavigation<Nav>();
   return (
-    <TouchableOpacity style={[styles.container, style]}>
+    <TouchableOpacity
+      style={[styles.container, style]}
+      onPress={() => navigation.navigate("Detail")}
+    >
       <Image source={image} style={styles.image} />
       <View style={styles.dishInfo}>
         <View>
