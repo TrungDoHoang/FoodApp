@@ -1,5 +1,5 @@
-import { useNavigation } from "@react-navigation/native";
-import React from "react";
+import { useNavigation } from '@react-navigation/native';
+import React from 'react';
 import {
   Image,
   ImageSourcePropType,
@@ -7,9 +7,9 @@ import {
   Text,
   TouchableOpacity,
   View,
-  ViewStyle,
-} from "react-native";
-import { Nav } from "../Router";
+  ViewStyle
+} from 'react-native';
+import { Nav } from '../Router';
 
 type MenuItemType = {
   id: string;
@@ -19,20 +19,13 @@ type MenuItemType = {
   description: string;
   style?: ViewStyle;
 };
-const MenuItem = ({
-  id,
-  name,
-  image,
-  price,
-  description,
-  style,
-}: MenuItemType) => {
+const MenuItem = ({ id, name, image, price, description, style }: MenuItemType) => {
   const navigation = useNavigation<Nav>();
+
   return (
     <TouchableOpacity
       style={[styles.container, style]}
-      onPress={() => navigation.navigate("Detail")}
-    >
+      onPress={() => navigation.navigate('Detail')}>
       <Image source={image} style={styles.image} />
       <View style={styles.dishInfo}>
         <View>
@@ -47,43 +40,43 @@ const MenuItem = ({
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
+    flexDirection: 'row',
     borderBottomWidth: 0.5,
-    borderBottomColor: "#eaeaea",
-    paddingVertical: 16,
+    borderBottomColor: '#eaeaea',
+    paddingVertical: 16
   },
   image: {
     width: 100,
     height: 100,
     marginRight: 16,
-    shadowColor: "black",
+    shadowColor: 'black',
     shadowOpacity: 1,
     shadowRadius: 8,
     shadowOffset: {
       width: 2,
-      height: 2,
-    },
+      height: 2
+    }
   },
   dishInfo: {
     flex: 1,
-    flexWrap: "wrap",
+    flexWrap: 'wrap'
   },
   dishName: {
     fontSize: 13,
-    fontWeight: "bold",
-    color: "#333",
-    marginBottom: 16,
+    fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 16
   },
   description: {
     fontSize: 11,
-    color: "rgba(51,51,51,0.4)",
-    marginBottom: 8,
+    color: 'rgba(51,51,51,0.4)',
+    marginBottom: 8
   },
   price: {
     fontSize: 12,
-    fontWeight: "bold",
-    color: "#FE4A00",
-  },
+    fontWeight: 'bold',
+    color: '#FE4A00'
+  }
 });
 
 export default MenuItem;

@@ -1,5 +1,5 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
 type MenuType = {
   title: string;
@@ -16,12 +16,12 @@ const Menu = ({ title, children }: MenuType) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 40,
+    marginBottom: 40
   },
   title: {
-    fontWeight: "800",
-    marginBottom: 16,
-  },
+    fontWeight: '800',
+    marginBottom: 16
+  }
 });
 
 export default Menu;
